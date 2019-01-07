@@ -1,38 +1,24 @@
-def roll_call_dwarves(array) # code an argument here
-  # Your code here
-   
-
-
-
-
-def summon_captain_planet# code an argument here
-  # Your code here
-  
-
-summon_captain_planet(planeteer_calls)
-
-
-def long_planeteer_calls# code an argument here
-  # Your code here
-    i = 0 
-  if  array.any? {|i| i.length > 4}
-    return true
-  else 
-    return false
-  i = i + 1
-  end 
-
-long_planeteer_calls(call_screams)
-
-
-cheese_types = ["cheddar", "gouda", "camembert"]
-snacks = ["crackers", "gouda", "thyme"]
-
-def find_the_cheese2(array, array2)
-  cheese_types = array2
-    array.find do |type|
-    cheese_types.include?(type)
-  end 
+def roll_call_dwarves(array)
+  index = 0
+  array.each_with_index {|name, index| puts "#{index + 1}. #{name} "}
 end
 
-find_the_cheese2(snacks, cheese_types)
+def summon_captain_planet(array)
+  planeteer_calls = []
+  array.collect do |calls|
+    planeteer_calls << "#{calls.capitalize}!"
+  end
+  planeteer_calls
+end
+
+def long_planeteer_calls(array)
+  array.any? do |word|
+    word.length > 4
+end
+end
+
+def find_the_cheese(array)
+  array.find do |cheese|
+    cheese == "cheddar" || cheese == "gouda" || cheese == "camembert"
+  end
+end
